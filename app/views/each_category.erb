@@ -1,0 +1,24 @@
+<%=  @category.name %> <br>
+
+<% i = 1 %>
+<% while i <= @category.posts.length %>
+<a href="/category/<%=@category.id%>/post/<%= @category.posts.find(i).id %>"> <%= @category.posts.find(i).name%> </a> <br>
+<%= @category.posts.find(i).price%> <br> 
+<% i += 1 %>
+<% end %> 
+
+If you want you can create a new post below 
+<form action="/new_post/<%=@category.id%>" method="POST">
+  <label for="name"> Name </label> 
+  <input id="name" type="text" name="name"><br>
+  <label for="description"> Description </label> 
+  <input id="description" type="text" name="description"><br>
+  <label for="price"> Price </label>
+  <input id="price" type="text" name="price"><br>
+  <label for="email"> email </label>
+  <input id="email" type="text" name="email"><br>
+  <input type="submit">
+</form>
+  
+
+
